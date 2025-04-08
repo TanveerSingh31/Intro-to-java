@@ -39,6 +39,5 @@ public class Conversions {
         System.out.println(numResult);
         System.out.println(numResultLong);
 
-
     }
 }

@@ -1,6 +1,8 @@
 public class Student {
     public
     int age;
+    static int noOfStudents = 0;
+    final int data = 10; // "final" makes the variable constant
     Student(int age) {
         this.age = age;
     }
