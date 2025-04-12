@@ -2,6 +2,7 @@ package ClassesTest;
 
 import Classes.ChildClass;
 import Classes.ConcreteClass;
+import Classes.PersonClass;
 // import Classes.ConcreteClassPackagePrivate;
 
 public class Main {
@@ -22,6 +23,18 @@ public class Main {
         System.out.println(childObj.getA());
         System.out.println(childObj.getB());
         childObj.getSum(); // Implementation directly in Abstract class -> Parent
+
+
+        // Interface
+        PersonClass p1 = new PersonClass("Tanveer", 23);
+        System.out.println(p1.getPersonAge());
+        System.out.println(p1.getPersonName());
+        p1.sayHello();
+
+
+
+        // 3.
+
 
     }
 
