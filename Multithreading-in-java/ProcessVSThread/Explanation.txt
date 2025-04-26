@@ -1,0 +1,59 @@
+Process vs Thread
+
+Process
+- Each program when runs/executes, It runs inside a process.
+- Each process has independent - Memory, Thread, etc.. (created by OS)
+- Other processes cannot access resources of other Processes.
+
+
+Thread
+- Smallest sequence of instruction executed independently by CPU
+- When the program starts , it creates the "main thread",
+    and instructions are executed on this main thread only.
+- We can create more threads in the same process.
+
+
+Working
+1. Javac Main.java (compliation) -> java Main ->  When program runs/executes -> process is created
+2. For each process, a new JVM Instance is provided. Process makes use of this JVM instance.
+3. JVM interprets the byte-code, and the JIT compiler converts to machine code
+      JVM if sees that multiple threads are involved in the the code
+            -> it creates multiple threads
+            -> and Stack, Register, PC is assigned to each thread
+
+
+Components of a JVM Instance
+--------- components shared by all threads in a process ----------
+1. Code Segment - Stores the compiled byte-code of the process (Also stores the JIT compiled machine code)
+2. Data Segment - Contains GLOBAL & STATIC variables
+3. Heap - Objects created get stored on the heap (All threads share the same heap memory)
+
+
+--------- components separate of all threads in a process ----------
+1. Stack - to store local variables of a thread.
+2. Register - stores the JIT compiled machine code (Helps in context switching)
+                -> When CPU time of a thread is over, the result is moved to Register of the Thread,
+                   so that when thread again comes for processing , it continues from where it had left.
+3. Program Counter - Stores the reference , which part of code is getting executed.
+
+
+
+
+Multi-Threading
+1. Allows to execute multiple operations at the same time
+2. Multiple threads share the same resource
+
+
+Advantages
+1. Improved performance by executing tasks in parallel
+2. Resource sharing
+
+
+Disadvantages
+1. Deadlock conditions - as multiple threads share the same resources
+2. Additional overhead of Synchronized methods
+
+
+MultiTasking vs MultiThreading
+=> Multi Tasking - CPU executing multiple processes using context switching.
+=> Multi Threading - Executing Different threads

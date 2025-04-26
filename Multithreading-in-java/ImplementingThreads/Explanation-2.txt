@@ -1,0 +1,29 @@
+Ways to create Threads
+
+1. implementing "Runnable" Interface
+2. extend the "Thread" Class
+
+Q - Why 2 ways to create threads ?
+- If a class wants to take use of Threads, but already extends another class,
+  it would not have been possible. As a class can extend only 1 class
+- So to overcome this, "Runnable" interface is introduced, so that those classes can also use the Thread functionality
+   -> It does by implementing "run" method
+
+
+------------------------------------------
+1. "Runnable" Interface (**** Most used)
+ - Functional Interface , with Run() method as abstract method
+ - Classes implementing this interface, need to define "Run" method inside it.
+    The code written inside Run(){} method will be executed on separate thread.
+    The thread will directly invoke the Run() method
+
+Steps
+1. Class implements the "Runnable" interface
+2. Class must @Override the "run" method
+3. Object of the class is created
+4. Object of "Thread" Class is created, by passing the Object of class to it's constructor
+5. invoke "start()" of the thread object -> internally invokes the run() method of the class
+
+
+
+2. "Thread" Class
