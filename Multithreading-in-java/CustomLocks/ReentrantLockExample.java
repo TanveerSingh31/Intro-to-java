@@ -55,6 +55,5 @@ public class ReentrantLockExample {
         t1.start();
         t2.start();
 
-
     }
 }
