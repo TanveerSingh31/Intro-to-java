@@ -11,7 +11,11 @@ public class Main {
 
         // Points to remember
         // 1. Virtual Threads are Daemon Threads by default
-            // meaning - virtual threads will terminate , if main threads terminates
+            // -> meaning - virtual threads will terminate , if main threads terminates
+        // 2. When virtual threads goes in waiting state, JVM removes it's link with OS thread
+            // -> making the OS thread unblocked, it can process another task
+        // 3. Virtual Threads are used mostly for I/O operations
+        // 4. We can create numerous Virtual Threads, since it is managed by JVM.
 
 
         // 2 Ways to create Virtual Threads
