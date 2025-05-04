@@ -16,4 +16,9 @@ import java.lang.annotation.*;
 
 @MyAnnotation(name = "Tanveer")
 public class CustomAnnotation {
+
+    public static void method() {
+        System.out.println("customAnnotation class method invoked");
+    }
+
 }

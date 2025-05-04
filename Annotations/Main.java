@@ -1,3 +1,5 @@
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 // 1. @Deprecated Annotation
 @Deprecated
@@ -37,6 +39,9 @@ class Teacher implements TeacherInterface {
 
 public class Main {
 
+    public Main() throws NoSuchMethodException {
+    }
+
     // 3. @SuppressWarnings Annotation
     @SuppressWarnings("all")
     public void StudentFunction() {
@@ -44,7 +49,7 @@ public class Main {
     }
 
 
-    public static void main (String [] args) {
+    public static void main (String [] args) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
 
         Student s1 = new Student(); // compiler gives warning, that class is deprecated
         s1.getData(); // we get warning
@@ -56,8 +61,13 @@ public class Main {
 
 
 
+
+        // invoking methods of Custom Annotation using Reflection
+        Class customAnnotationReflection = CustomAnnotation.class;
+        CustomAnnotation obj = new CustomAnnotation();
+
+        Method methodToInvoke = customAnnotationReflection.getDeclaredMethod("method");
+        methodToInvoke.invoke(obj);
     }
-
-
 
 }
