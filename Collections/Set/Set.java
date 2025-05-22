@@ -15,6 +15,7 @@ public class Set {
         hs.add(1);
         hs.add(10);
         hs.add(2);
+        hs.add(4);
         hs.add(null);
 
         hs.forEach((Integer a) -> {
@@ -29,7 +30,7 @@ public class Set {
         LinkedHashSet<Integer> lhs = new LinkedHashSet<>();
         lhs.add(1);
         lhs.add(10);
-        lhs.add(2);
+        lhs.add(5);
         lhs.add(null);
 
         System.out.println("linked has set output");
@@ -54,6 +55,16 @@ public class Set {
             System.out.println(a);
         });
 
+
+
+
+        // Commonly used methods
+        hs.addAll(lhs);
+        System.out.println(hs);
+
+        // retains intersection of hs and lhs
+        hs.retainAll(lhs);
+        System.out.println(hs);
 
 
 
