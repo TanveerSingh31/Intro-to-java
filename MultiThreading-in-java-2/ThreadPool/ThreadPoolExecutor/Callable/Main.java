@@ -1,10 +1,12 @@
-package ThreadPool.ThreadPoolExecutor.Future;
+package ThreadPool.ThreadPoolExecutor.Callable;
 
 import java.util.concurrent.*;
 
 public class Main {
 
     public static void main(String [] args) {
+
+
         ThreadPoolExecutor executor = new ThreadPoolExecutor(
                 2,      // min no. of threads
                 4,                  // max no. of thread
@@ -16,21 +18,27 @@ public class Main {
         );
 
 
-        Future<?> futureObj = executor.submit(()->{
+
+        Future<Integer> futureObj = executor.submit(() -> {
+            // This task is treated as "callable", since it is returning some data
             System.out.println("inside thread pool");
+            return 123;
         });
+
         try{
-            futureObj.get(); // waits for the thread pool , runnable task to complete
-        } catch (Exception e) {
+            System.out.println(futureObj.get());
+        }
+        catch(Exception e) {
 
         }
 
-        System.out.println("in main thread");
+
+        System.out.println("inside main thread");
+
     }
 
+
 }
-
-
 
 class ThreadFactorySample implements ThreadFactory {
     @Override
@@ -53,3 +61,7 @@ class customRejectionHandler implements RejectedExecutionHandler {
         System.out.println("Task rejected");
     }
 }
+
+
+
+
