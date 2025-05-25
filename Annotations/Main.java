@@ -68,6 +68,9 @@ public class Main {
 
         Method methodToInvoke = customAnnotationReflection.getDeclaredMethod("method");
         methodToInvoke.invoke(obj);
+
+        Object data = customAnnotationReflection.getAnnotation(MyAnnotation.class).name();
+        System.out.println(data);
     }
 
 }
