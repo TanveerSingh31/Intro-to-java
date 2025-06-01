@@ -10,6 +10,8 @@ public class EagerLoadingSingletonClass {
     }
 
     // Public method -> to access the singleton object
+    // It will be static , as we need to access the object, but we already don't have the object
+    // It can be accessed only via the class name
     public static EagerLoadingSingletonClass getInstance() {
         return singletonObj;
     }
