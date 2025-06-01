@@ -10,7 +10,7 @@ public class EagerLoadingSingletonClass {
     }
 
     // Public method -> to access the singleton object
-    public EagerLoadingSingletonClass getInstance() {
+    public static EagerLoadingSingletonClass getInstance() {
         return singletonObj;
     }
 
